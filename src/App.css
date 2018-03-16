@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
+.logo-img {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 90px;
 }
 
 .App-header {
@@ -22,7 +22,7 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+@keyframes logo-img {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
