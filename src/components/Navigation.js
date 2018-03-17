@@ -1,39 +1,52 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
+
+import Home from "./Home";
+import Projects from "./Projects";
 
 class Navigation extends Component {
- 
-  burgerToggle = (e) => {
+  burgerToggle = e => {
     e.preventDefault();
-    let linksEl = document.querySelector('.narrow-links');
-    if (linksEl.style.display === 'block'){
-      linksEl.style.display = 'none';
+    let linksEl = document.querySelector(".narrow-links");
+    if (linksEl.style.display === "block") {
+      linksEl.style.display = "none";
     } else {
-      linksEl.style.display = 'block';
+      linksEl.style.display = "block";
     }
-  }
+  };
 
   render() {
     return (
       <nav>
         <div className="nav-wide">
           <div className="wide-div">
-            <a href="">Link 1</a>
-            <a href="">Link 2</a>
-            <a href="">Link 3</a>
+            <Link to="/">about</Link>
+            <Link to="/projects">projects</Link>
+            <Link to="#">resume</Link>
           </div>
         </div>
 
         <div className="nav-narrow">
-        <button className="fa fa-bars fa-2x" onClick={this.burgerToggle}>asdf</button>
+          <button className="fa fa-bars fa-2x" onClick={this.burgerToggle}>
+            ===
+          </button>
           <div className="narrow-links">
-            <a href="#" onClick={this.burgerToggle}>Link 11</a>
-            <a href="#" onClick={this.burgerToggle}>Link 22</a>
-            <a href="#" onClick={this.burgerToggle}>Link 3</a>
+            <Link to="/" onClick={this.burgerToggle}>
+              Link 11
+            </Link>
+            <Link to="/projects" onClick={this.burgerToggle}>
+              Link 22
+            </Link>
+            <Link to="#" onClick={this.burgerToggle}>
+              Link 33
+            </Link>
           </div>
-        </div> 
+          <Route exact path="/" component={Home} />
+          <Route exact path="/projects" component={Projects} />
+        </div>
       </nav>
-    )
+    );
   }
-} 
+}
 
 export default Navigation;
