@@ -9,8 +9,7 @@ class Header extends Component{
         <div className="col-sm">
           <h1>Nick Nedev</h1>
           <h3>full stack javascript developer</h3>
-        </div>
-        
+        </div>  
       </div>
     )
   }
