@@ -21,6 +21,11 @@ nav .nav-wide {
   display: none;
   margin: 0 auto;
 }
+
+.wide-div {
+  margin: 10px;
+}
+
 nav .nav-wide .wide-div {
   text-align: center;
 }
