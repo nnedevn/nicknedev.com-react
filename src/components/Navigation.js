@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, Link} from "react-router-dom";
 
 import Home from "./Home";
 import Projects from "./Projects";
 
 class Navigation extends Component {
   burgerToggle = e => {
-    e.preventDefault();
     let linksEl = document.querySelector(".narrow-links");
     if (linksEl.style.display === "block") {
       linksEl.style.display = "none";
@@ -17,7 +16,8 @@ class Navigation extends Component {
 
   render() {
     return (
-      <Router>
+      <div>
+        
         <nav>
           <div className="nav-wide">
             <div className="wide-div">
@@ -32,23 +32,21 @@ class Navigation extends Component {
             </button>
             <div className="narrow-links">
               <Link to="/" onClick={this.burgerToggle}>
-                Link 11
+                Home
               </Link>
               <Link to="/projects" onClick={this.burgerToggle}>
-                Link 22
+                Projects
               </Link>
               <Link to="#" onClick={this.burgerToggle}>
-                Link 33
+                Resume
               </Link>
             </div>
             <div />
           </div>
-
-          <Route exact path="/" component={Home} />
-            <Route exact path="/projects" component={Projects} />
         </nav>
-        
-      </Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/projects" component={Projects} />
+      </div>
     );
   }
 }
