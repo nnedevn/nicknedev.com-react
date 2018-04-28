@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Route, Link} from "react-router-dom";
-
+import { Route, Link } from "react-router-dom";
+import { TransitionGroup, CSSTransitions } from 'react-transition-group';
 import Home from "./Home";
 import Projects from "./Projects";
 
@@ -17,7 +17,6 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        
         <nav>
           <div className="nav-wide">
             <div className="wide-div">
